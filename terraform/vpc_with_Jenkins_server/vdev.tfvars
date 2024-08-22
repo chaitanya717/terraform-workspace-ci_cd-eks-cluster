@@ -18,8 +18,8 @@ rt_cidr_route = "0.0.0.0/0"
 
 # jenkins server variables
 key_name = "jenkins"
-public_key = ""
-ami = ""
+public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGTHq+9IPyIQfL3Sder5omaXxvqRlVnXX4bhXDUEBSHc root@ip-172-31-17-174"
+ami = "ami-03cc8375791cb8bcf"
 instance_type = "t2.medium"
 instance_name = "instance"
 associate_public_ip_address = true
@@ -27,8 +27,8 @@ user_data = "../terraform/Scripts/jenkin_install.sh"
 
 # kubectl server variables
 key_name_kubectl = "kubectl"
-public_key_kubectl = ""
-ami_kubectl = ""
+public_key_kubectl = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGTHq+9IPyIQfL3Sder5omaXxvqRlVnXX4bhXDUEBSHc root@ip-172-31-17-174"
+ami_kubectl = "ami-03cc8375791cb8bcf"
 instance_type_kubectl = "t2.meduim"
 instance_name_kubectl = "kubectl-server"
 associate_public_ip_address__kubectl = true 
