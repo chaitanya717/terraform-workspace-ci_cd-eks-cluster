@@ -87,5 +87,5 @@ variable "desired_size" {}
 variable "max_size" {}
 variable "min_size" {}
 variable "ami_type" {}
-variable "instance_types" {}
+variable "instance_types_eks" {}
 variable "disk_size" {}

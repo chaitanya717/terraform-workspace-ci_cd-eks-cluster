@@ -50,5 +50,5 @@ desired_size = 2
 max_size = 3
 min_size = 1
 ami_type = "AL2_x86_64"
-instance_types = ["t2.medium"]
+instance_types_eks = ["t2.medium"]
 disk_size = 20
