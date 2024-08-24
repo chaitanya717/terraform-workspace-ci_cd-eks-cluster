@@ -1,7 +1,6 @@
 
 variable "eks-node-group-name" {}
 variable "NodeGroupRole_arn" {}
-variable "subnet_ids" {}
 variable "desired_size" {}
 variable "max_size" {}
 variable "min_size" {}
