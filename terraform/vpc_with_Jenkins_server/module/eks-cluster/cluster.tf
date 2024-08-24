@@ -12,7 +12,7 @@ variable "kubernetes_version" {}
 
 resource "aws_eks_cluster" "eks-cluster" {
   name = "${var.env}-${var.cluster_name}-${var.app_name}"
-  role_arn = var.EKSClusterRole.arn
+  role_arn = var.EKSClusterRole_arn
 
   vpc_config {
     subnet_ids = var.subnet_ids
