@@ -38,4 +38,4 @@ user_data__kubectl = "../terraform/Scripts/kubectl_helm_install.sh"
 sg_name = "ssh"
 sg_name_softwares = "software-ports"
 vpc_sg_allowports = [22,443,80]
-vpc_sg_allowports_softwares = [8080,9000]
+vpc_sg_allowports_softwares = [22,443,80,8080,9000]

@@ -55,7 +55,7 @@ resource "aws_security_group" "security-group-softwares" {
     description = "port allow"
     ipv6_cidr_blocks = []
     prefix_list_ids  = []
-    security_groups  = [aws.aws_security_group.security-group]
+    security_groups  = []
     self             = null
     }
   ]
