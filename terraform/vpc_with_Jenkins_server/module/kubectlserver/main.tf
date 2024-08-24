@@ -4,7 +4,9 @@ variable "ami_kubectl" {}
 variable "instance_type_kubectl" {}
 variable "instance_name_kubectl" {}
 variable "subnet_id_kubectl" {}
-variable "vpc_security_group_ids_kubectl" {}
+variable "vpc_security_group_ids_kubectl" {
+  type = list(string)
+}
 variable "associate_public_ip_address_kubectl" {}
 variable "user_data_kubectl" {}
 variable "env" {}
@@ -25,7 +27,7 @@ resource "aws_instance" "aws-instance" {
 
   key_name = var.key_name_kubectl
   subnet_id = var.subnet_id_kubectl
-  vpc_security_group_ids = [var.vpc_security_group_ids_kubectl] # change here
+  vpc_security_group_ids = var.vpc_security_group_ids_kubectl
   associate_public_ip_address = var.associate_public_ip_address_kubectl
   user_data = var.user_data_kubectl
 

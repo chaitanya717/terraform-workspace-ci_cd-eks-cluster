@@ -4,7 +4,9 @@ variable "ami" {}
 variable "instance_type" {}
 variable "instance_name" {}
 variable "subnet_id" {}
-variable "vpc_security_group_ids" {}
+variable "vpc_security_group_ids" {
+   type = list(string)
+}
 variable "associate_public_ip_address" {}
 variable "user_data" {}
 variable "env" {}
@@ -20,7 +22,7 @@ resource "aws_instance" "aws-instance" {
   instance_type = var.instance_type
   key_name = var.key_name
   subnet_id = var.subnet_id
-  vpc_security_group_ids = [var.vpc_security_group_ids] # chage here
+  vpc_security_group_ids = var.vpc_security_group_ids
   associate_public_ip_address = var.associate_public_ip_address
 
   user_data = var.user_data
