@@ -25,7 +25,7 @@ resource "aws_instance" "aws-instance" {
 
   key_name = var.key_name_kubectl
   subnet_id = var.subnet_id_kubectl
-  vpc_security_group_ids = var.vpc_security_group_ids_kubectl
+  vpc_security_group_ids = [var.vpc_security_group_ids_kubectl] # change here
   associate_public_ip_address = var.associate_public_ip_address_kubectl
   user_data = var.user_data_kubectl
 
