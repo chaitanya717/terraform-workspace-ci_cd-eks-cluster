@@ -76,4 +76,17 @@ subnet_ids = tolist(module.vpc.subnet_id)
 app_name = var.app_name
 env = var.enviroment
 kubernetes_version = var.kubernetes_version
+
+# node group variables
+eks-node-group-name = var.eks-node-group-name
+NodeGroupRole_arn = module.iam-role-eks.NodeGroupRole_arn
+desired_size = var.desired_size
+max_size = var.max_size
+min_size = var.min_size
+ami_type = var.ami_type
+instance_types = var.instance_type
+disk_size = var.disk_size
+AmazonEC2ContainerRegistryReadOnly_policy_id = module.iam-policy-eks.AmazonEC2ContainerRegistryReadOnly_id
+AmazonEKS_CNI_Policy_id = module.iam-policy-eks.AmazonEKS_CNI_Policy_id
+AmazonEKSWorkerNodePolicy_Policy_id = module.iam-policy-eks.AmazonEKSWorkerNodePolicy_id
 }
