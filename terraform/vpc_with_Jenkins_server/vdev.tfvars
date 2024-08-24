@@ -37,5 +37,11 @@ user_data__kubectl = "../terraform/Scripts/kubectl_helm_install.sh"
 # security group variables
 sg_name = "ssh"
 sg_name_softwares = "software-ports"
+sg_name_eks = "eks-twotier-app-ports"
 vpc_sg_allowports = [22,443,80]
 vpc_sg_allowports_softwares = [22,443,80,8080,9000]
+vpc_sg_allowports_eks = [22,443,80]
+
+# eks cluster vaiables
+kubernetes_version = 1.28
+cluster_name = ""

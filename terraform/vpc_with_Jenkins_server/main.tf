@@ -22,6 +22,8 @@ vpc_sg_allowports = var.vpc_sg_allowports
 vpc_sg_allowports_softwares = var.vpc_sg_allowports_softwares
 app_name = var.app_name
 env = var.enviroment 
+sg_name_eks = var.sg_name_eks
+vpc_sg_allowports_eks = var.vpc_sg_allowports_eks
 }
 
 module "jenkins-server" {
@@ -54,3 +56,24 @@ app_name = var.app_name
 env = var.enviroment
 }
 
+module "iam-policy-eks" {
+  source = "./module/iam-policy-eks"
+  EKSClusterRole_name = module.iam-role-eks.EKSClusterRole_name
+  NodeGroupRole_name = module.iam-role-eks.NodeGroupRole_name
+}
+
+module "iam-role-eks" {
+    source = "./module/iam-role-eks"
+}
+
+module "eks-cluster" {
+source = "./module/eks-cluster"
+cluster_name = var.cluster_name
+EKSClusterRole_arn = module.iam-role-eks.EKSClusterRole_arn
+aws_iam_role_policy_attachment_AmazonEKSClusterPolicy_id = module.iam-policy-eks.AmazonEKSClusterPolicy_id
+security_group_ids = [module.security-groups.ssh_sg,module.security-groups.eks-sg]
+subnet_ids = tolist(module.vpc.subnet_id)
+app_name = var.app_name
+env = var.enviroment
+kubernetes_version = var.kubernetes_version
+}
