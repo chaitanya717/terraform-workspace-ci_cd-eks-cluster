@@ -29,7 +29,7 @@ resource "aws_instance" "aws-instance" {
   subnet_id = var.subnet_id_kubectl
   vpc_security_group_ids = var.vpc_security_group_ids_kubectl
   associate_public_ip_address = var.associate_public_ip_address_kubectl
-  user_data = file("./kubectl_helm_install.sh")
+  user_data = file("${path.module}/kubectl_helm_install.sh")
 
   metadata_options {
     http_endpoint = "enabled"
