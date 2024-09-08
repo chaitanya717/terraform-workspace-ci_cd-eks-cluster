@@ -78,7 +78,7 @@ resource "aws_security_group" "security-group-softwares" {
   }
 }
 resource "aws_security_group" "security-group-eks" {
-  name = "${var.env}-${var.sg_name_softwares}-${var.app_name}"
+  name = "${var.env}-${var.sg_name_eks}-${var.app_name}"
   vpc_id = var.vpc_id
 
   ingress = [
