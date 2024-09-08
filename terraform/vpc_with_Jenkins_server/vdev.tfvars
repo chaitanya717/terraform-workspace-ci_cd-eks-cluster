@@ -23,7 +23,7 @@ ami = "ami-03cc8375791cb8bcf"
 instance_type = "t2.medium"
 instance_name = "instance"
 associate_public_ip_address = true
-user_data = "../terraform/Scripts/jenkin_install.sh"
+user_data = "../Scripts/jenkin_install.sh"
 
 # kubectl server variables
 key_name_kubectl = "kubectl"
@@ -32,7 +32,7 @@ ami_kubectl = "ami-03cc8375791cb8bcf"
 instance_type_kubectl = "t2.medium"
 instance_name_kubectl = "kubectl-server"
 associate_public_ip_address__kubectl = true 
-user_data__kubectl = "../terraform/Scripts/kubectl_helm_install.sh"
+user_data__kubectl = "../Scripts/kubectl_helm_install.sh"
 
 # security group variables
 sg_name = "ssh"
