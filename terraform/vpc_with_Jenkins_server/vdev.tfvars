@@ -36,8 +36,8 @@ user_data__kubectl = "../terraform/Scripts/kubectl_helm_install.sh"
 
 # security group variables
 sg_name = "ssh"
-sg_name_softwares = "software-ports"
-sg_name_eks = "eks-twotier-app-ports"
+sg_name_softwares = "software-ports-tetri"
+sg_name_eks = "eks-twotier-app-ports-tetirs"
 vpc_sg_allowports = [22,443,80]
 vpc_sg_allowports_softwares = [22,443,80,8080,9000]
 vpc_sg_allowports_eks = [22,443,80]
@@ -46,9 +46,9 @@ vpc_sg_allowports_eks = [22,443,80]
 kubernetes_version = 1.28
 cluster_name = "eks-cluster"
 eks-node-group-name = "dev-node-group-two-tier-app"
-desired_size = 2
+desired_size = 1
 max_size = 3
-min_size = 1
+min_size = 2
 ami_type = "AL2_x86_64"
 instance_types_eks = ["t2.medium"]
 disk_size = 20
