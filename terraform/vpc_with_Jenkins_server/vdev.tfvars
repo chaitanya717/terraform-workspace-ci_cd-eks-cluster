@@ -7,7 +7,7 @@ vpc_name = "dev-vpc-two-tier-app"
 
 # vpc subnet variables
  subnet_name = "public-subnet"
- subnet_cidr_block = ["10.0.1.0/24","10.0.2.0/24"]
+ subnet_cidr_block = ["10.0.1.0/24","10.0.2.0/24",]
  availability_zone = ["eu-west-1a","eu-west-1b","eu-west-1c"]
  map_public_ip_on_launch = true
 
@@ -23,7 +23,7 @@ ami = "ami-03cc8375791cb8bcf"
 instance_type = "t2.medium"
 instance_name = "instance"
 associate_public_ip_address = true
-user_data = "../terraform/Scripts/jenkin_install.sh"
+user_data = "jenkin_install.sh"
 
 # kubectl server variables
 key_name_kubectl = "kubectl"
@@ -32,23 +32,11 @@ ami_kubectl = "ami-03cc8375791cb8bcf"
 instance_type_kubectl = "t2.meduim"
 instance_name_kubectl = "kubectl-server"
 associate_public_ip_address__kubectl = true 
-user_data__kubectl = "../terraform/Scripts/kubectl_helm_install.sh"
+user_data__kubectl = "kubectl_helm_install.sh"
 
 # security group variables
 sg_name = "ssh"
 sg_name_softwares = "software-ports"
-sg_name_eks = "eks-twotier-app-ports"
+
 vpc_sg_allowports = [22,443,80]
 vpc_sg_allowports_softwares = [22,443,80,8080,9000]
-vpc_sg_allowports_eks = [22,443,80]
-
-# eks cluster vaiables
-kubernetes_version = 1.28
-cluster_name = "eks-cluster"
-eks-node-group-name = "dev-node-group-two-tier-app"
-desired_size = 2
-max_size = 3
-min_size = 1
-ami_type = "AL2_x86_64"
-instance_types_eks = ["t2.medium"]
-disk_size = 20

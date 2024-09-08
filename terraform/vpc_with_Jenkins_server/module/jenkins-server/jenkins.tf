@@ -25,7 +25,7 @@ resource "aws_instance" "aws-instance" {
   vpc_security_group_ids = var.vpc_security_group_ids
   associate_public_ip_address = var.associate_public_ip_address
 
-  user_data = var.user_data
+  user_data = file("${var.user_data}")
 
   tags = {
     Name = "${var.env}-${var.instance_name}-${var.app_name}"
