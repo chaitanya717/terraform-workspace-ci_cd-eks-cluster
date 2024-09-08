@@ -15,10 +15,6 @@ output "softwares_sg" {
   value = aws_security_group.security-group-softwares.id
 }
 
-output "eks-sg" {
-  value = aws_security_group.security-group-eks.id
-}
-
 resource "aws_security_group" "security-group" {
   name = "${var.env}-${var.sg_name}-${var.app_name}"
   vpc_id = var.vpc_id
