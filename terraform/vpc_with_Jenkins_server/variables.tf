@@ -65,14 +65,11 @@ variable "user_data__kubectl" {}
 # security group variables
 variable "sg_name" {}
 variable "sg_name_softwares" {}
-variable "sg_name_eks" {}
+
 variable "vpc_sg_allowports" {
     type = list(number)
 }
 variable "vpc_sg_allowports_softwares" {
-    type = list(number)
-}
-variable "vpc_sg_allowports_eks" {
     type = list(number)
 }
 
