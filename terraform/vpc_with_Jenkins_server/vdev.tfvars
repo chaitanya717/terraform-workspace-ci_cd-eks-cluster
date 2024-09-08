@@ -36,7 +36,7 @@ user_data__kubectl = "../terraform/Scripts/kubectl_helm_install.sh"
 
 # security group variables
 sg_name = "ssh"
-sg_name_softwares = "software-ports-tetri-new"
+sg_name_softwares = "software-ports-tetri"
 sg_name_eks = "eks-twotier-app-ports-tetirs"
 vpc_sg_allowports = [22,443,80]
 vpc_sg_allowports_softwares = [22,443,80,8080,9000]
