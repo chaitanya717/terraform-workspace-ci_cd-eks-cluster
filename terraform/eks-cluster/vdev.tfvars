@@ -1,12 +1,12 @@
 # security group variables
-env = ""
-app_name = ""
+env = "dev"
+app_name = "two-tier"
 
 sg_name_eks = "sg-eks-twotier-app-ports"
 vpc_sg_allowports_eks = [22,443,80]
 
-vpc_id = ""
-subnet_ids = ["",""]
+vpc_id = "vpc-048137d78fab35ef5"
+subnet_ids = ["subnet-01d9baa40a65355d3","subnet-009bc95457d949a3e"]
 
 # eks cluster vaiables
 kubernetes_version = 1.28
