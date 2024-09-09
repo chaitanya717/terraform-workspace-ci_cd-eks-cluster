@@ -1,5 +1,5 @@
 # security group variables
-env = "dev"
+enviroment = "dev"
 app_name = "two-tier"
 
 sg_name_eks = "sg-eks-twotier-app-ports"
