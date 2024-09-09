@@ -2,6 +2,9 @@
 enviroment = "dev"
 app_name = "two-tier"
 
+region = "eu-west-1"
+bucket_name = "dev-env-eks-state-bucket-two-tier-app"
+
 sg_name_eks = "sg-eks-twotier-app-ports"
 vpc_sg_allowports_eks = [22,443,80]
 
