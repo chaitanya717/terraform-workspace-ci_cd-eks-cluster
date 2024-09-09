@@ -20,10 +20,6 @@ variable "subnet_ids" {}
 
 variable "vpc_sg_allowports_eks" {}
 
-variable "env" {}
-variable "app_name" {}
-
-
 
 variable "kubernetes_version" {}
 variable "cluster_name" {}

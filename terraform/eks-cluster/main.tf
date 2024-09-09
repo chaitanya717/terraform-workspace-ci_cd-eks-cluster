@@ -41,3 +41,5 @@ AmazonEC2ContainerRegistryReadOnly_policy_id = module.iam-policy-eks.AmazonEC2Co
 AmazonEKS_CNI_Policy_id = module.iam-policy-eks.AmazonEKS_CNI_Policy_id
 AmazonEKSWorkerNodePolicy_Policy_id = module.iam-policy-eks.AmazonEKSWorkerNodePolicy_id
 }
+
+
