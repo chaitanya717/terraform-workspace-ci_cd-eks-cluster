@@ -30,6 +30,13 @@ spec:
             secretKeyRef:
               name: mysql-secrets
               key: MYSQL_DATABASE
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"      
   #       volumeMounts:
   #       - name: mysql-storage
   #         mountPath: /var/lib/mysql
