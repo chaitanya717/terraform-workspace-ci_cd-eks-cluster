@@ -37,15 +37,15 @@ spec:
           limits:
             memory: "1Gi"
             cpu: "500m"
-        volumeMounts:
-        - name: mysql-storage
-          mountPath: /var/lib/mysql
-  volumeClaimTemplates:
-  - metadata:
-      name: mysql-storage
-    spec:
-      accessModes: [ "ReadWriteOnce" ]  # EBS supports only ReadWriteOnce
-      storageClassName: "gp2"  # Storage class for EBS
-      resources:
-        requests:
-          storage: 1Gi  # Size of the volume
+  #       volumeMounts:
+  #       - name: mysql-storage
+  #         mountPath: /var/lib/mysql
+  # volumeClaimTemplates:
+  # - metadata:
+  #     name: mysql-storage
+  #   spec:
+  #     accessModes: [ "ReadWriteOnce" ]  # EBS supports only ReadWriteOnce
+  #     storageClassName: "gp2"  # Storage class for EBS
+  #     resources:
+  #       requests:
+  #         storage: 1Gi  # Size of the volume
