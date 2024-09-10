@@ -26,3 +26,26 @@ spec:
           requests:
             memory: "150Mi"
             cpu: "150m"
+        env:
+        - name: DB_HOST
+          value: "172.20.46.72"
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQLDB_USER
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQLDB_ROOT_PASSWORD
+        - name: DB_NAME
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQLDB_DATABASE
+        - name: DB_PORT
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: MYSQLDB_DOCKER_PORT
