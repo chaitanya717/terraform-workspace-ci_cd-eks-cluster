@@ -33,20 +33,20 @@ spec:
         - name: DB_USER
           valueFrom:
             secretKeyRef:
-              name: mysql-secret
+              name: mysql-secrets
               key: MYSQLDB_USER
         - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mysql-secret
+              name: mysql-secrets
               key: MYSQLDB_ROOT_PASSWORD
         - name: DB_NAME
           valueFrom:
             secretKeyRef:
-              name: mysql-secret
+              name: mysql-secrets
               key: MYSQLDB_DATABASE
         - name: DB_PORT
           valueFrom:
             secretKeyRef:
-              name: mysql-secret
+              name: mysql-secrets
               key: MYSQLDB_DOCKER_PORT
