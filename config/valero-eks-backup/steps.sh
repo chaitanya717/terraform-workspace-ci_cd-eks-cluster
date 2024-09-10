@@ -47,8 +47,8 @@ velero backup describe eks-backup
 				"s3:DeleteObject"
 			],
 			"Resource": [
-				"arn:aws:s3:::velero-eks-backup-2tier-chetan",
-				"arn:aws:s3:::velero-eks-backup-2tier-chetan/*"
+				"arn:aws:s3:::velero-twotier-namespace-backup-eks",
+				"arn:aws:s3:::velero-twotier-namespace-backup-eks/*"
 			]
 		}
 	]

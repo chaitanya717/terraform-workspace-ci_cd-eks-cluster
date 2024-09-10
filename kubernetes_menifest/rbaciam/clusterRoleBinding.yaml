@@ -1,0 +1,13 @@
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: pod-service-reader-binding
+  namespace: two-tier
+subjects:
+- kind: User
+  name: devlopers
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role
+  name: pod-service-reader
+  apiGroup: rbac.authorization.k8s.io
