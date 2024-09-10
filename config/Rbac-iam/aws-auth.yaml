@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapUsers: |
+    - userarn: arn:aws:iam::357171621133:user/admin
+      username: admin
+---
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: two-tier
+data:
+  mapUsers: |
+    - userarn: arn:aws:iam::357171621133:user/devloper
+      username: devloper
+---
