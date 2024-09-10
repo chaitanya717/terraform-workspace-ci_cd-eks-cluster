@@ -29,7 +29,7 @@ spec:
             cpu: "150m"
         env:
         - name: DB_HOST
-          value: "172.20.46.72"
+          value: "172.20.46.72"  # Change to MySQL service cluster IP or hostname for flexibility
         - name: DB_USER
           valueFrom:
             secretKeyRef:
@@ -46,7 +46,14 @@ spec:
               name: mysql-secrets
               key: MYSQL_DATABASE
         - name: DB_PORT
-          valueFrom:
-            secretKeyRef:
-              name: mysql-secrets
-              key: MYSQLDB_DOCKER_PORT
+          value: "3306"  # Optional: hardcoded as MySQL default port
+
+        # Attaching volume for storage
+        volumeMounts:
+        - name: persistent-storage
+          mountPath: /app/data  # Adjust this path to where your app needs to store data
+
+      volumes:
+      - name: persistent-storage
+        persistentVolumeClaim:
+          claimName: ebs-claim  # Ensure this PVC exists
