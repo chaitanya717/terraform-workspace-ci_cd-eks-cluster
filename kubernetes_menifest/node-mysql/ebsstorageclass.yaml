@@ -1,9 +1,10 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: ebs-sc
-  namespace: twotier
-provisioner: ebs.csi.aws.com
+  name: gp2
+provisioner: kubernetes.io/aws-ebs
 parameters:
-  type: gp2
-volumeBindingMode: WaitForFirstConsumer
+  type: gp2  # Can be io1, sc1, st1 depending on your requirements
+  fsType: ext4  # Filesystem type for the volume
+reclaimPolicy: Retain  # Retain the volume after the PVC is deleted
+volumeBindingMode: WaitForFirstConsumer  # Delay volume binding until the pod is scheduled
