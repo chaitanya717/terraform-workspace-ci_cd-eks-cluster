@@ -5,7 +5,7 @@ metadata:
   namespace: twotier
 spec:
   serviceName: "mysql"
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: mysql
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: mysql:5.7  # Correct version to 5.6 as requested
+        image: mysql:5.6  # Corrected version
         ports:
         - containerPort: 3306
         env:
@@ -36,15 +36,11 @@ spec:
             cpu: "250m"
           limits:
             memory: "1Gi"
-            cpu: "500m"      
-  #       volumeMounts:
-  #       - name: mysql-storage
-  #         mountPath: /var/lib/mysql
-  # volumeClaimTemplates:
-  # - metadata:
-  #     name: mysql-storage
-  #   spec:
-  #     accessModes: [ "ReadWriteOnce" ]
-  #     resources:
-  #       requests:
-  #         storage: 1Gi
+            cpu: "500m"
+        volumeMounts:
+        - name: persistent-storage-mysql
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: persistent-storage-mysql  # Corrected to match the volumeMount name
+        persistentVolumeClaim:
+          claimName: ebs-claim

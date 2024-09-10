@@ -40,3 +40,6 @@ alertmanager:
 ##
 pushgateway:
   enabled: false
+
+
+aws iam create-policy --policy-name "AWSManagedPrometheusWriteAccessPolicy" --policy-document ./AWSManagedPrometheusWriteAccessPolicy.json 
