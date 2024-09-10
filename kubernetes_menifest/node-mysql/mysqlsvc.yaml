@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-service
+spec:
+  type: ClusterIP  # Correct the capitalization
+  selector:
+    app: mysql
+  ports:
+    - protocol: TCP
+      port: 3306         # MySQL runs on port 3306
+      targetPort: 3306   # Target the correct port in the container
