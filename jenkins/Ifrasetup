@@ -82,7 +82,10 @@ pipeline {
         /*
         stage('Terraform Action') {
             steps {
-                withAWS(credentials: 'aws-key', region: 'us-east-1') { 
+                 withCredentials([[
+                    $class: 'AmazonWebServicesCredentialsBinding',
+                    credentialsId: 'aws-key'
+                ]]) { 
                     script {
                         echo "${params.'Terraform-Action'}"
                         dir('terraform/vpc_with_Jenkins_server') {

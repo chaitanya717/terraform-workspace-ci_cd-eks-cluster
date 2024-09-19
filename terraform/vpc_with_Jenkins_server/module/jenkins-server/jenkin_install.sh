@@ -19,9 +19,9 @@ sudo apt-get install jenkins -y
 #!/bin/bash
 sudo apt update
 sudo apt install docker.io -y
-sudo usermod -aG docker jenkins
-sudo usermod -aG docker ubuntu
-sudo systemctl restart docker
+sudo usermod -aG docker jenkins \
+sudo usermod -aG docker ubuntu \
+sudo systemctl restart docker \
 sudo chmod 777 /var/run/docker.sock
 
 # If you don't want to install Jenkins, you can create a container of Jenkins
